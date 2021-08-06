@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta class="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.1.0/dist/jdenticon.min.js" async
+        integrity="sha384-VngWWnG9GS4jDgsGEUNaoRQtfBGiIKZTiXwm9KpgAeaRn6Y/1tAFiyXqSzqC8Ga/" crossorigin="anonymous">
+    </script>
+
+    <title>🎂Cakee | Home</title>
+</head>
+
+<body>
+    <div class="main-body-section bg-gray-100 w-full h-full">
+
+        <!-- Navigation Panel -->
+
+        <div class="navigation bg-gray-100 w-full h-20 p-3">
+            <div class="nav-icons flex justify-between">
+
+                <!-- Right side nav icons -->
+
+                <div class="right-side-icons flex justify-center items-center
+                text-gray-800 ml-4 font-bold">
+                    <div class="logo h-16 w-16">
+                        <img class="cursor-pointer" src="./images/logo1.png" alt="">
+                    </div>
+                    <div class="home hover:text-yellow-500 hover:underline pl-10">
+                        <span><a href="index.html">Home</a></span>
+                    </div>
+                    <div class="Pricing hover:text-yellow-500 hover:underline pl-10">
+                        <span><a href="#catagories">Catagories</a></span>
+                    </div>
+                    <div class="Contact hover:text-yellow-500 hover:underline pl-10">
+                        <span><a href="#contact">Contact</a></span>
+                    </div>
+                </div>
+
+                <!-- Left side nav icons -->
+
+                <div class="Orders flex justify-end items-center mr-8 cursor-pointer
+                text-gray-800">
+                    <svg width="40" height="40" data-jdenticon-value="gihan"></svg>
+                    <span><a href="./orders.html">Orders</a></span>
+                </div>
+            </div>
+
+            <!-- Orders Section -->
+
+
+
+            <div class="price-section m-20">
+                <table class="table-auto">
+                    <thead>
+                        <tr>
+                            <th class="1/2">Product</th>
+                            <th class="w-1/4">Size</th>
+                            <th class="w-1/4">Count</th>
+                            <th class="w-1/4">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <select class="product" id="product">
+                                    <option value="2000" selected>Strawberry Cake</option>
+                                    <option value="1500">Chocalate Cake</option>
+                                    <option value="2200">Lava Cake</option>
+                                    <option value="1200">Birthday Cake</option>
+                                    <option value="1000">Vanilla Cake</option>
+                                </select>
+                            </td>
+                            <td class="pl-8">
+                                <select class="size" id="size">
+                                    <option value="1.3" selected>Large</option>
+                                    <option value="0.8">Small</option>
+                                    <option value="1.5">Extra Large</option>
+                                </select>
+                            </td>
+                            <td class="pl-8">
+                                <select class="count" id="count">
+                                    <option value="1">One: 1</option>
+                                    <option value="2">Two: 2</option>
+                                    <option value="3">Three: 3</option>
+                                    <option value="4">Four: 4</option>
+                                    <option value="5">Five: 5</option>
+                                </select>
+                            </td>
+                            <td class="pl-8">Rs. <span id="total">0.00</span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div class="text-pink-600 mt-20" id="text">
+
+                </div>
+                <div class="enter-button m-10 px-3 py-2 bg-yellow-500
+                w-24 flex items-center justify-center rounded hover:bg-yellow-600">
+                    <button id="calculate-total">Enter</button>
+                </div>
+            </div>
+
+            <footer id="contact" class="bg-gray-800 text-white w-full h-60">
+                <div class="div max-w-3xl mx-auto text-center pt-8">
+                    <div class="heading-contact text-2xl mb-3">
+                        <h1>Pick your favor and go yum yum.</h1>
+                    </div>
+                    <div class="hr h-1 bg-gray-100"></div>
+                    <div class="contac pt-3">
+                        <h3 class="hover:underline transition duration-100 ease-in-out">Our 24/7 hour servise</h3>
+                        <h2 class="hover:underline transition duration-100 easein--out">Email : cakee@gmail.com</h2>
+                        <h2 class="hover:underline transition duration-100 ease-in-out">Address: No 52/8 Colombo
+                            Srilanka</h2>
+                    </div>
+                    <div class="subscribe flex justify-center items-cnter mt-3">
+                        <input class="text-gray-800" type="email pl-2" placeholder="Email:">
+                        <a class="ml-3" href="#">Submit</a>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script>
+        function getCards() {
+            let card = document.querySelector('.contain-grid');
+            card.addEventListener('click', function () {
+                if (card) {
+                    alert("Go to Order page to have a order")
+                }
+            })
+        }
+
+        // function CalculateTotal() {
+            
+        // }
+
+        totalPrice = 0;
+
+        let totalBtn = document.getElementById("calculate-total");
+        totalBtn.addEventListener('click', function () {
+            let productType = document.getElementById('product');
+            selectedProduct = productType[productType.selectedIndex].value;
+            // console.log(selectedProduct);
+
+            let cakeSize = document.getElementById('size');
+            selectedcakeSize = cakeSize[cakeSize.selectedIndex].value;
+            // console.log(selectedcakeSize);
+            let cakeCount = document.getElementById('count');
+            selectedcakeAmount = cakeCount[cakeCount.selectedIndex].value;
+
+            console.log(selectedcakeAmount);
+
+            selectedProductInt = parseInt(selectedProduct);
+            selectedcakeSizeFloat = parseFloat(selectedcakeSize);
+            selectedCakeCountInt = parseInt(selectedcakeAmount);
+
+            let total = (selectedProductInt * selectedcakeSizeFloat) * selectedCakeCountInt;
+
+            totalLabel = document.getElementById('total').innerHTML = total;
+
+            
+
+            // console.log(total);
+
+
+        });
+
+        getCards();
+    </script>
+
+</body>
+
+</html>
